@@ -1,0 +1,63 @@
+﻿body {
+    background-color: cadetblue;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Adobe Gothic Std', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.orange-text {
+    font-size: clamp(24px, 6vw, 40px);
+    color: black;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.cat-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+}
+
+.cat-image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 3px solid #fff;
+}
+
+    /* Анимация при наведении */
+    .cat-image:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+    }
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 600px) {
+    .orange-text {
+        font-size: 28px;
+    }
+
+    .cat-image {
+        max-height: 60vh;
+        border-width: 2px;
+    }
+}
+
+@media (max-width: 400px) {
+    .orange-text {
+        font-size: 24px;
+    }
+
+    .cat-image {
+        max-height: 50vh;
+    }
+}

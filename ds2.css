@@ -1,0 +1,43 @@
+﻿body {
+    background-color: hotpink;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-text, .ps-text {
+    font-family: 'Adobe Gothic Std', Arial, sans-serif;
+    font-size: clamp(18px, 5vw, 30px);
+    color: black;
+    margin: 15px 0;
+    line-height: 1.4;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.lali {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 400px) {
+    .main-text, .ps-text {
+        font-size: 16px;
+    }
+
+    .lali {
+        max-height: 60vh;
+    }
+}

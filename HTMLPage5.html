@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Чаймирдверьмяч</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #6cbbb9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-size: clamp(20px, 5vw, 28px);
+            margin: 10px 0;
+        }
+
+        marquee {
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+            marquee a {
+                color: white;
+                text-decoration: none;
+                font-size: 14px;
+            }
+
+        .question {
+            margin: 15px auto;
+            padding: 15px;
+            width: 95%;
+            max-width: 600px;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            aspect-ratio: 1/1;
+            margin: 10px auto;
+            border: 3px solid white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 560px; /* Сохраняем пропорции 16:9 для 720x560 */
+            margin: 10px auto;
+            border: 3px solid white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            /* Сохраняем пропорции видео 16:9 */
+            .video-container::before {
+                content: "";
+                display: block;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            }
+
+            .video-container video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        p {
+            font-size: clamp(16px, 4vw, 18px);
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 15px 0;
+            width: 90%;
+            max-width: 300px;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        #result {
+            margin: 20px auto;
+            padding: 15px;
+            width: 95%;
+            max-width: 600px;
+            font-weight: bold;
+            font-size: clamp(16px, 4vw, 18px);
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: clamp(14px, 3.5vw, 16px);
+            text-align: left;
+            padding: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+        /* Адаптация для очень маленьких экранов */
+        @media (max-width: 400px) {
+            .question {
+                padding: 10px;
+            }
+
+            label {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Чаймирдверьмяч (на английском)</h1>
+    <marquee scrolldelay="1" truespeed="truespeed">
+        <a href="https://mnogoblog.ru/opros-na-javascript"><p class="f">Пример брали отсюда</p></a>
+    </marquee>
+
+    <div id="quiz">
+        <!-- Вопрос 1 -->
+        <div class="question">
+            <div class="image-container">
+                <img src="чайикофе.jpg" alt="Чай и кофе">
+            </div>
+            <p>1. Чем отличается кофе от чая?</p>
+            <label><input type="radio" name="q1" value="0"> Вкусом</label>
+            <label><input type="radio" name="q1" value="1"> Наличием урана-235</label>
+            <label><input type="radio" name="q1" value="2"> Чай в пакетиках, а кофе в банках</label>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="question">
+            <p>2. Сколько компьютеров в 6 аудитории 7 корпуса?</p>
+            <label><input type="radio" name="q2" value="0"> 11</label>
+            <label><input type="radio" name="q2" value="1"> 9</label>
+            <label><input type="radio" name="q2" value="2"> 10</label>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="question">
+            <div class="video-container">
+                <video controls playsinline>
+                    <source src="лабуделаеш.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <p>3. Сколько сексуальных парней учится в группе ЭиЭб-3805-09-00?</p>
+            <label><input type="radio" name="q3" value="0"> Никто</label>
+            <label><input type="radio" name="q3" value="1"> 1 человек (Александр Дёмин)</label>
+            <label><input type="radio" name="q3" value="2"> Все</label>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="question">
+            <div class="image-container">
+                <img src="пахтусов.jpg" alt="Пахтусов">
+            </div>
+            <p>4. Сколько пар по физкультуре посетил Максим Пахтусов в этом семестре?</p>
+            <label><input type="radio" name="q4" value="0"> Все</label>
+            <label><input type="radio" name="q4" value="1"> 2</label>
+            <label><input type="radio" name="q4" value="2"> Ах чё, надо на физкультуру что ли ходить?</label>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="question">
+            <p>5. Адрес 7 корпуса</p>
+            <label><input type="radio" name="q5" value="0"> ул. Преображенская, д. 32</label>
+            <label><input type="radio" name="q5" value="1"> ул. Московская, д. 36</label>
+            <label><input type="radio" name="q5" value="2"> ул. Береговая, д. 5</label>
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="question">
+            <p>6. Каким злодеем из Бэтмена был бы В.И. Лалетин?</p>
+            <label><input type="radio" name="q6" value="0"> Рас аль Гул</label>
+            <label><input type="radio" name="q6" value="1"> Двуликий</label>
+            <label><input type="radio" name="q6" value="2"> Mr. Freeze</label>
+        </div>
+
+        <!-- Вопрос 7 -->
+        <div class="question">
+            <p>7. У кого самые густые усы на Диком Западе?</p>
+            <label><input type="radio" name="q7" value="0"> Грудинин В.С.</label>
+            <label><input type="radio" name="q7" value="1"> Сбоев В.М.</label>
+            <label><input type="radio" name="q7" value="2"> Охапкин С.И.</label>
+        </div>
+
+        <button onclick="checkAnswers()">Проверить ответы</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = ['0', '0', '2', '1', '0', '1', '2'];
+            let score = 0;
+
+            for (let i = 1; i <= 7; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[i - 1]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `Правильных ответов: ${score} из 7`;
+
+            if (score === 7) {
+                resultDiv.innerHTML += "<br>Блестяще!";
+                resultDiv.style.color = "green";
+            } else if (score >= 5) {
+                resultDiv.innerHTML += "<br>Неплохо, но можно лучше!";
+                resultDiv.style.color = "orange";
+            } else {
+                resultDiv.innerHTML += "<br>Попробуйте еще раз!";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
